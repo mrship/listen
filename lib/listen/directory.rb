@@ -13,13 +13,13 @@ module Listen
       path = dir + rel_path
       current = Set.new(path.children)
 
-      if options[:silence]
-        _log :debug, "Recording: #{rel_path}: #{options.inspect}"\
-          " [#{previous.inspect}] -> (#{current.inspect})"
-      else
-        _log :debug, "Scanning: #{rel_path}: #{options.inspect}"\
-          " [#{previous.inspect}] -> (#{current.inspect})"
-      end
+      # if options[:silence]
+      #   _log :debug, "Recording: #{rel_path}: #{options.inspect}"\
+      #     " [#{previous.inspect}] -> (#{current.inspect})"
+      # else
+      #   _log :debug, "Scanning: #{rel_path}: #{options.inspect}"\
+      #     " [#{previous.inspect}] -> (#{current.inspect})"
+      # end
 
       current.each do |full_path|
         type = full_path.directory? ? :dir : :file
